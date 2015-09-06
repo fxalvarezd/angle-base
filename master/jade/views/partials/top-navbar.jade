@@ -1,0 +1,26 @@
+nav.navbar.topnavbar(role='navigation')
+        .navbar-header
+            a.navbar-brand(href='#/') 
+                .brand-logo 
+                    img.img-responsive(src="app/img/logo.png", alt="App Logo")
+                .brand-logo-collapsed 
+                    img.img-responsive(src="app/img/logo-single.png", alt="App Logo")
+        .nav-wrapper
+            ul.nav.navbar-nav
+                li
+                    a(href='#', trigger-resize="", ng-click="app.layout.isCollapsed = !app.layout.isCollapsed").hidden-xs
+                        em.fa.fa-navicon
+                    a(href='#', ng-click="app.asideToggled = !app.asideToggled").visible-xs.sidebar-toggle
+                        em.fa.fa-navicon
+            ul.nav.navbar-nav.navbar-right
+                li
+                    a(search-open="")
+                        em.fa.fa-search
+                li
+                    a(href='#', ng-click="app.offsidebarOpen = !app.offsidebarOpen")
+                        em.fa.fa-sign-out
+        form.navbar-form(role='search', action="search.html")
+            .form-group.has-feedback
+                input.form-control(type='text', placeholder="{{ 'topbar.search.PLACEHOLDER' }}")
+                .fa.fa-times.form-control-feedback(search-dismiss)
+            button.hidden.btn.btn-default(type='submit') Submit
